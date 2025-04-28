@@ -7,6 +7,8 @@ const config = {
   scene: { preload, create, update },
 };
 
+let isPaused = false;
+
 const game = new Phaser.Game(config);
 let player,
   cursors,
@@ -42,6 +44,18 @@ function create() {
   this.input.keyboard.on("keydown-SPACE", () =>
     placeBomb(this, player.x, player.y)
   );
+
+  document.getElementById("pauseButton").addEventListener("click", () => {
+    this.scene.pause();
+    document.getElementById("playButton").style.display = "block";
+    document.getElementById("pauseButton").style.display = "none";
+  });
+
+  document.getElementById("playButton").addEventListener("click", () => {
+    this.scene.resume();
+    document.getElementById("pauseButton").style.display = "block";
+    document.getElementById("playButton").style.display = "none";
+  });
 }
 
 function update() {
