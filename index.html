@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bomber-man</title>
+    <!-- <link rel="icon" href="favicon.ico"> -->
+    <!-- <script type="module" src="./bomb.js"></script>
+    <script type="module" src="./main.js" defer></script> -->
+    <script src="node_modules/phaser/dist/phaser.min.js"></script>
+
+    <script defer src="map.js"></script>
+    <script defer src="player.js"></script>
+    <script defer src="enemy.js"></script>
+    <script defer src="bomb.js"></script>
+    <script defer src="main.js"></script>
+    <script>
+        function restartGame() {
+            document.getElementById("gameOverModal").style.display = "none"; // Hide modal
+            location.reload(); // Reload the page to restart the game
+        }
+
+        function youWon() {
+            document.getElementById("youWonModal").style.display = "none"; // Hide modal
+            location.reload(); // Reload the page to restart the game
+        }
+
+    </script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: white;
+        }
+
+        canvas {
+            border: 1px solid black;
+            /* 1px solid black border around the game */
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        .modal button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="gameOverModal" class="modal">
+        <div class="modal-content">
+            <h2>Game Over!</h2>
+            <p>You lost. Try again?</p>
+            <button onclick="restartGame()">Restart</button>
+        </div>
+    </div>
+
+    <div id="youWonModal" class="modal">
+        <div class="modal-content">
+            <h2>You Won!</h2>
+            <p>You Won. Let's go again?</p>
+            <button onclick="youWon()">Restart</button>
+        </div>
+    </div>
+</body>
+
+</html>
