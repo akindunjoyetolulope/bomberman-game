@@ -72,6 +72,42 @@
 </head>
 
 <body>
+    <div id="gameRules" style="padding: 20px; font-family: sans-serif; max-width: 600px; margin: auto;">
+        <h1>🎮 Bomberman Game Rules</h1>
+
+        <h2>Objective:</h2>
+        <p>Destroy all enemies using bombs to win the game.</p>
+
+        <h2>How to Play:</h2>
+        <ul>
+            <li>Move the player with the arrow keys (↑ ↓ ← →).</li>
+            <li>Place a bomb by pressing the <strong>SPACE</strong> key.</li>
+            <li>Bombs explode after 2 seconds and spread 2 tiles in all 4 directions.</li>
+            <li>Destroy destructible blocks and kill enemies with bomb explosions.</li>
+        </ul>
+
+        <h2>Rules:</h2>
+        <ul>
+            <li>Touching an enemy = 💀 <strong>Game Over</strong>.</li>
+            <li>Explosions can destroy enemies and destructible blocks.</li>
+            <li>You win when all enemies are destroyed!</li>
+        </ul>
+
+        <h2>Tips:</h2>
+        <ul>
+            <li>Avoid standing near your bomb when it explodes!</li>
+            <li>Use bombs to open paths if trapped.</li>
+            <li>Time your bombs carefully to catch enemies.</li>
+        </ul>
+
+        <h2>Victory:</h2>
+        <p>When all enemies are destroyed, the "You Win!" screen appears.</p>
+
+        <h2>Defeat:</h2>
+        <p>If an enemy touches you, the "Game Over" screen appears.</p>
+    </div>
+
+
     <div id="gameOverModal" class="modal">
         <div class="modal-content">
             <h2>Game Over!</h2>
@@ -87,6 +123,18 @@
             <button onclick="youWon()">Restart</button>
         </div>
     </div>
+
+    <button id="pauseButton"
+        style="position: absolute; top: 20px; right: 20px; padding: 10px 20px; font-size: 16px; z-index: 10;">
+        ⏸️ Pause
+    </button>
+
+    <button id="playButton"
+        style="position: absolute; top: 20px; right: 20px; padding: 10px 20px; font-size: 16px; z-index: 10; display: none;">
+        ▶️ Play
+    </button>
+
+
 </body>
 
 </html>
